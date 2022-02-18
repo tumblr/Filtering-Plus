@@ -4,7 +4,8 @@ browser.menus.create({
   id: 'tagFiltering',
   targetUrlPatterns: [
     '*://www.tumblr.com/tagged/*',
-    '*://www.tumblr.com/blog/view/*/search/*'
+    '*://www.tumblr.com/blog/view/*/search/*',
+    '*://www.tumblr.com/blog/view/*/tagged/*'
   ],
   title: 'Filter this tag'
 });
