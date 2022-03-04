@@ -1,4 +1,4 @@
-browser.menus.create({
+chrome.contextMenus.create({
   documentUrlPatterns: ['*://www.tumblr.com/*'],
   contexts: ['link'],
   id: 'tagFiltering',
@@ -10,7 +10,7 @@ browser.menus.create({
   title: 'Filter this tag'
 });
 
-browser.menus.create({
+chrome.contextMenus.create({
   documentUrlPatterns: ['*://www.tumblr.com/*'],
   contexts: ['selection'],
   id: 'contentFiltering',
@@ -43,7 +43,7 @@ const onMenuItemClicked = function ({ menuItemId, linkUrl, selectionText }, { id
     script.remove();
   }`;
 
-  browser.tabs.executeScript(tabId, { code });
+  chrome.tabs.executeScript(tabId, { code });
 };
 
-browser.menus.onClicked.addListener(onMenuItemClicked);
+chrome.contextMenus.onClicked.addListener(onMenuItemClicked);
